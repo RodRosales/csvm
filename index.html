@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="fr"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Club Skinouk vélo de montagne - Inscription des parents accompagnateurs&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body { font-family: 'Montserrat', sans-serif; background-color: #f0f9ff; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.header-bg { background-color: #0369a1; background-image: linear-gradient(135deg, #0369a1 0%, #0284c7 100%); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-primary { background-color: #0284c7; transition: all 0.3s ease; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-primary:hover { background-color: #0369a1; transform: translateY(-2px); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.category-card { border-left: 4px solid transparent; transition: all 0.2s ease; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.category-card:hover { border-left: 4px solid #0284c7; background-color: #f0f9ff; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.group-card { transition: all 0.2s ease; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.group-card:hover { transform: translateY(-2px); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.calendar-day { transition: all 0.2s ease; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.calendar-day:hover:not(.day-disabled) { background-color: #e0f2fe; cursor: pointer; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.day-selected { background-color: #0284c7 !important; color: white !important; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.day-disabled { opacity: 0.3; cursor: not-allowed !important; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.loading-spinner { border: 3px solid rgba(0,0,0,0.1); border-radius: 50%; border-top: 3px solid #0284c7; width: 20px; height: 20px; animation: spin 1s linear infinite; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="min-h-screen flex flex-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Header --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;header class="header-bg text-white py-4 shadow-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="container mx-auto px-4 flex justify-between items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;circle cx="12" cy="12" r="10"&gt;&lt;/circle&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;circle cx="12" cy="12" r="3"&gt;&lt;/circle&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;line x1="12" y1="2" x2="12" y2="4"&gt;&lt;/line&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;line x1="12" y1="20" x2="12" y2="22"&gt;&lt;/line&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;line x1="2" y1="12" x2="4" y2="12"&gt;&lt;/line&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;line x1="20" y1="12" x2="22" y2="12"&gt;&lt;/line&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h1 class="text-xl md:text-2xl font-bold"&gt;Club Skinouk vélo de montagne&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="font-medium text-sm md:text-base"&gt;Inscription des parents accompagnateurs&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Main Content --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;main class="flex-grow container mx-auto px-4 py-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-xl font-bold text-gray-800 mb-4"&gt;Inscription des parents accompagnateurs&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 mb-6"&gt;Sélectionnez une date et inscrivez-vous comme parent accompagnateur.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Connection Status --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="connectionStatus" class="mb-4 p-3 bg-yellow-50 border border-yellow-200 rounded-md flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="loading-spinner mr-3"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-yellow-700"&gt;Connexion au serveur...&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Date Selection and Calendar --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-lg font-semibold text-gray-700 mb-3"&gt;1. Sélectionnez une date d'entraînement&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="bg-gray-50 p-4 rounded-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex justify-between items-center mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;button id="prevMonth" class="text-blue-600 hover:text-blue-800"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&amp;larr;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 id="currentMonth" class="text-lg font-medium text-gray-800"&gt;&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;button id="nextMonth" class="text-blue-600 hover:text-blue-800"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&amp;rarr;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="grid grid-cols-7 gap-1 text-center text-xs font-medium text-gray-700 mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div&gt;Dim&lt;/div&gt;&lt;div&gt;Lun&lt;/div&gt;&lt;div&gt;Mar&lt;/div&gt;&lt;div&gt;Mer&lt;/div&gt;&lt;div&gt;Jeu&lt;/div&gt;&lt;div&gt;Ven&lt;/div&gt;&lt;div&gt;Sam&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div id="calendarDays" class="grid grid-cols-7 gap-1"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="mt-3 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm font-medium text-gray-700"&gt;Date sélectionnée: &lt;span id="selectedDateDisplay" class="text-blue-600"&gt;Aucune sélection&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="mt-3 text-sm text-gray-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="font-medium mb-1"&gt;Horaire des entraînements:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;ul class="list-disc pl-5 space-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;li&gt;Mardi: XC Comp, All Mountain Récréatif, XC Récréatif&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;li&gt;Mercredi: Enduro Comp uniquement&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;li&gt;Jeudi: Enduro Comp, XC Comp, All Mountain Récréatif, XC Récréatif&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;li&gt;Samedi: Enduro Comp, XC Comp&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;li&gt;Dimanche, Lundi, Vendredi: Pas d'entraînement&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Categories and Groups --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="categoriesContainer" class="space-y-6 hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-lg font-semibold text-gray-700 mb-3"&gt;2. Inscrivez-vous comme parent accompagnateur&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-gray-600 mb-4"&gt;Cliquez sur un groupe pour ajouter votre nom.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- [Categories go here—same structure as before; omitted for brevity] --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Footer --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;footer class="bg-gray-800 text-white py-4 mt-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="container mx-auto px-4 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm"&gt;© 2023 Club Skinouk vélo de montagne. Tous droits réservés.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Add Volunteer Modal --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="addVolunteerModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white rounded-lg p-6 max-w-md w-full mx-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 class="text-lg font-medium text-gray-900 mb-4"&gt;Ajouter votre nom&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-sm text-gray-600 mb-4"&gt;Vous vous inscrivez pour &lt;span id="modalGroupInfo" class="font-medium"&gt;&lt;/span&gt; le &lt;span id="modalDateInfo" class="font-medium"&gt;&lt;/span&gt;.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label for="volunteerName" class="block text-sm font-medium text-gray-700 mb-1"&gt;Votre nom&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="text" id="volunteerName" class="w-full px-3 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-end space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="cancelAddVolunteer" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200"&gt;Annuler&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="confirmAddVolunteer" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700"&gt;Ajouter mon nom&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Success Notification --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="successNotification" class="fixed bottom-4 right-4 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-md shadow-md hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg class="h-5 w-5 text-green-500 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-sm"&gt;Merci pour votre participation !&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.addEventListener('DOMContentLoaded', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxPbK50Y3ywzCGqS_J4no1kSSwapYzR35LYKbF45QoM161A6x_UDbrOpryrvJd5vUD4Zg/exec';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let today = new Date(), currentMonth = today.getMonth(), currentYear = today.getFullYear();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let selectedDate = null, currentCategory = null, currentGroup = null;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const statusEl = document.getElementById('connectionStatus'),</p>
+<p class="p1"><span class="Apple-converted-space">              </span>notifEl <span class="Apple-converted-space">  </span>= document.getElementById('successNotification');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Utility: call Apps Script</p>
+<p class="p1"><span class="Apple-converted-space">        </span>async function callScript(params) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const url = new URL(SCRIPT_URL);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Object.keys(params).forEach(key =&gt; url.searchParams.append(key, params[key]));</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const resp = await fetch(url);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (!resp.ok) throw new Error(resp.statusText);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return await resp.json();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} catch (err) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error(err);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>statusEl.className = 'mb-4 p-3 bg-red-50 border border-red-200 rounded-md flex items-center';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>statusEl.innerHTML = `&lt;p class="text-sm text-red-700"&gt;Erreur de connexion au serveur. Mode hors ligne activé.&lt;/p&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return null;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function showConnected() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>statusEl.className = 'mb-4 p-3 bg-green-50 border border-green-200 rounded-md flex items-center';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>statusEl.innerHTML = `&lt;p class="text-sm text-green-700"&gt;Connecté au serveur&lt;/p&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Calendar rendering</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updateCalendar() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const monthNames = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('currentMonth').textContent = `${monthNames[currentMonth]} ${currentYear}`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const container = document.getElementById('calendarDays');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>container.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const firstDay = new Date(currentYear, currentMonth, 1).getDay(),</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>daysInMonth = new Date(currentYear, currentMonth+1, 0).getDate();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let i=0; i&lt;firstDay; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const empty = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>empty.className = 'h-8 border border-transparent';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>container.appendChild(empty);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let d=1; d&lt;=daysInMonth; d++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const cell = document.createElement('div'),</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>dateObj = new Date(currentYear, currentMonth, d),</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>dow = dateObj.getDay();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>cell.textContent = d;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>cell.className = 'calendar-day h-8 flex items-center justify-center border rounded-md text-sm';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if ([0,1,5].includes(dow)) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>cell.classList.add('day-disabled','bg-gray-100','text-gray-400');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>cell.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>document.querySelectorAll('.calendar-day').forEach(c =&gt; c.classList.remove('day-selected'));</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>cell.classList.add('day-selected');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>selectedDate = dateObj;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>document.getElementById('selectedDateDisplay').textContent = dateObj.toLocaleDateString('fr-CA',{weekday:'long',year:'numeric',month:'long',day:'numeric'});</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>document.getElementById('categoriesContainer').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>updateVisibleCategories(dow);</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>loadVolunteersForDate(formatDate(dateObj));</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>container.appendChild(cell);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('prevMonth').onclick = () =&gt; { currentMonth--; if (currentMonth&lt;0){ currentMonth=11; currentYear--; } updateCalendar(); };</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('nextMonth').onclick = () =&gt; { currentMonth++; if (currentMonth&gt;11){ currentMonth=0; currentYear++; } updateCalendar(); };</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Show/hide categories based on weekday</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updateVisibleCategories(dow) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelectorAll('[id^="category-"]').forEach(el =&gt; el.classList.add('hidden'));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (dow===2) ['xc-comp','all-mountain-rec','xc-rec'].forEach(id=&gt;document.getElementById(`category-${id}`).classList.remove('hidden'));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (dow===3) ['enduro-comp'].forEach(id=&gt;document.getElementById(`category-${id}`).classList.remove('hidden'));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (dow===4) ['enduro-comp','xc-comp','all-mountain-rec','xc-rec'].forEach(id=&gt;document.getElementById(`category-${id}`).classList.remove('hidden'));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (dow===6) ['enduro-comp','xc-comp'].forEach(id=&gt;document.getElementById(`category-${id}`).classList.remove('hidden'));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Format YYYY-MM-DD</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function formatDate(d) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const y=d.getFullYear(), m=String(d.getMonth()+1).padStart(2,'0'), day=String(d.getDate()).padStart(2,'0');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return `${y}-${m}-${day}`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Load volunteers</p>
+<p class="p1"><span class="Apple-converted-space">        </span>async function loadVolunteersForDate(dateKey) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const data = await callScript({ action:'fetch', date: dateKey });</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (data) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showConnected();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>updateVolunteersListFromData(data);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Render volunteer lists</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updateVolunteersListFromData(dateData) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelectorAll('.volunteers-list').forEach(list =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const cat = list.dataset.category, grp = list.dataset.group;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>list.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const names = (dateData[cat] &amp;&amp; dateData[cat][grp]) ? dateData[cat][grp] : [];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (!names.length) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>list.innerHTML = '&lt;p class="text-sm text-gray-500 italic"&gt;Aucun bénévole pour l\'instant&lt;/p&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>names.forEach(name =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const tag = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>tag.className = 'flex items-center justify-between bg-gray-50 px-2 py-1 rounded text-sm';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>tag.innerHTML = `&lt;span&gt;${name}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button class="text-red-500 hover:text-red-700" data-name="${name}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&amp;times;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/button&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>tag.querySelector('button').onclick = () =&gt; removeVolunteer(cat, grp, name);</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>list.appendChild(tag);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Modal: add volunteer</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.querySelectorAll('.add-volunteer-btn').forEach(btn =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>btn.onclick = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (!selectedDate) return alert('Veuillez sélectionner une date d\'abonnement d\'abord.');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentCategory = btn.dataset.category;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentGroup<span class="Apple-converted-space">    </span>= btn.dataset.group;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('modalGroupInfo').textContent = `${currentCategory.replace(/-/g,' ')} — Groupe ${currentGroup}`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('modalDateInfo').textContent = document.getElementById('selectedDateDisplay').textContent;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('addVolunteerModal').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('cancelAddVolunteer').onclick = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('addVolunteerModal').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('volunteerName').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('confirmAddVolunteer').onclick = async () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const name = document.getElementById('volunteerName').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!name) return alert('Veuillez entrer votre nom.');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const dateKey = formatDate(selectedDate);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const result = await callScript({</p>
+<p class="p1"><span class="Apple-converted-space">                </span>action: <span class="Apple-converted-space">  </span>'add',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>date: <span class="Apple-converted-space">    </span>dateKey,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>category: currentCategory,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>group:<span class="Apple-converted-space">    </span>currentGroup,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>name</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (result &amp;&amp; result.success) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('addVolunteerModal').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('volunteerName').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showNotification();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>loadVolunteersForDate(dateKey);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Remove volunteer</p>
+<p class="p1"><span class="Apple-converted-space">        </span>async function removeVolunteer(category, group, name) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const dateKey = formatDate(selectedDate);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const result = await callScript({</p>
+<p class="p1"><span class="Apple-converted-space">                </span>action: <span class="Apple-converted-space">  </span>'remove',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>date: <span class="Apple-converted-space">    </span>dateKey,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>category,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>group,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>name</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (result &amp;&amp; result.success) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>loadVolunteersForDate(dateKey);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alert("Erreur lors de la suppression. Veuillez réessayer.");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Show toast</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function showNotification() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>notifEl.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; notifEl.classList.add('hidden'), 3000);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Initialize</p>
+<p class="p1"><span class="Apple-converted-space">        </span>updateCalendar();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
